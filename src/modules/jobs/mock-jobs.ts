@@ -8,7 +8,7 @@ export const mockJobs: Job[] = [
     time: "10:00 - 14:00",
     location: "คณะวิศวกรรมศาสตร์",
     price: 0,
-    posted: new Date(),
+    posted: new Date("2025-01-16"),
     description:
       "ค่ายลานเกียร์เปิดรับสมัครฝ่าย PR แล้ว !!! สนใจสมัครได้ที่ link ด้านล่างเลยงับ",
   },
@@ -19,7 +19,7 @@ export const mockJobs: Job[] = [
     time: "10:00 - 14:00",
     location: "คณะวิศวกรรมศาสตร์",
     price: 0,
-    posted: new Date(),
+    posted: new Date("2025-01-20"),
     description:
       "ค่าย FE เปิดรับสมัครฝ่าย PR แล้ว !!! สนใจสมัครได้ที่ link ด้านล่างเลยงับ",
   },
