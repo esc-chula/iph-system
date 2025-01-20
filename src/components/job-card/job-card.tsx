@@ -1,15 +1,13 @@
-import { Button } from "@/components/ui/button";
 import { formatDate, formatPrice, formatRelativeTime } from "@/lib/utils";
 import { Job } from "@/types/jobs";
-import { DialogTrigger } from "@radix-ui/react-dialog";
 import { CoinsIcon, MapPinIcon, TimerIcon } from "lucide-react";
+import { JobApplyDialog } from "@/components/dialog";
 
 type JobCardProps = {
   job: Job;
-  onSelectJob?: (job: Job) => void;
 };
 
-export function JobCard({ job, onSelectJob }: JobCardProps) {
+export function JobCard({ job }: JobCardProps) {
   const { title, date, description, location, posted, price, time } = job;
 
   return (
@@ -44,14 +42,7 @@ export function JobCard({ job, onSelectJob }: JobCardProps) {
           <p className="font-bold text-gray-500">Description</p>
           <p className="text-gray-500">{description}</p>
         </div>
-        <DialogTrigger asChild>
-          <Button
-            onClick={() => onSelectJob && onSelectJob(job)}
-            className="text-base"
-          >
-            สมัคร
-          </Button>
-        </DialogTrigger>
+        <JobApplyDialog job={job} />
       </div>
     </div>
   );
