@@ -6,14 +6,14 @@ import { CoinsIcon, MapPinIcon, TimerIcon } from "lucide-react";
 
 type JobCardProps = {
   job: Job;
-  onSelectJob: (job: Job) => void;
+  onSelectJob?: (job: Job) => void;
 };
 
 export function JobCard({ job, onSelectJob }: JobCardProps) {
   const { title, date, description, location, posted, price, time } = job;
 
   return (
-    <div className="flex flex-col items-start w-full text-sm gap-4 p-4 border border-gray-200 rounded-lg shadow-md">
+    <div className="flex flex-col font-sans items-start w-full text-sm gap-4 p-4 border border-gray-200 rounded-lg shadow-md">
       <div className="flex justify-between w-full items-start">
         <h3 className="text-lg font-semibold">{title}</h3>
         <div className="flex flex-col">
@@ -45,7 +45,10 @@ export function JobCard({ job, onSelectJob }: JobCardProps) {
           <p className="text-gray-500">{description}</p>
         </div>
         <DialogTrigger asChild>
-          <Button onClick={() => onSelectJob(job)} className="text-base">
+          <Button
+            onClick={() => onSelectJob && onSelectJob(job)}
+            className="text-base"
+          >
             สมัคร
           </Button>
         </DialogTrigger>
