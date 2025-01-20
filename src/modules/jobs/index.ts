@@ -1,2 +1,2 @@
 export * from "./search";
-export * from "./list";
+export * from "./list.client";
